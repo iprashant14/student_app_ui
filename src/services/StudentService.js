@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const EMPLOYEE_API_BASE_URL = "http://localhost:8080/api/v1/students";
+const DEMO_API_BASE_URL = "http://localhost:8082/demo/api/v1/";
 
 class StudentService {
 
@@ -22,6 +23,10 @@ class StudentService {
 
     deleteStudent(studentId){
         return axios.delete(EMPLOYEE_API_BASE_URL + '/' + studentId);
+    }
+
+    getDemoData(){
+       return axios.get(DEMO_API_BASE_URL+"demoData");
     }
 }
 
